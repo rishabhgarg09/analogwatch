@@ -1,0 +1,134 @@
+ ::before,
+ ::after {
+      margin: 0;
+      box-sizing: border-box;
+ }
+ img {
+      vertical-align: bottom;
+ }
+ .niddle {
+      position: absolute;
+      background-color: black;
+      top: 50%;
+      left: 50%;
+      transform-origin: left;
+ }
+ .secondniddle {
+      z-index: 8;
+      transform-origin: left;
+      width: 140px;
+      height: 3px;
+ }
+
+ .minuteniddle {
+      width: 120px;
+      height: 5px;
+      z-index: 7;
+ }
+
+ .hourniddle {
+      width: 100px;
+      height: 9px;
+      z-index: 6;
+ }
+
+ footer {
+      background-color: aqua;
+ }
+
+ .clockimage {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+ }
+
+ .clockimage img {
+      width: 400px;
+      height: 400px;
+ }
+
+ .point {
+      position: absolute;
+      background-color: black;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9;
+ }
+
+ .secondniddle::before,
+ .minuteniddle::before,
+ .hourniddle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid black;
+      transform: translate(-100%, -35%);
+ }
+
+ .minuteniddle::before,
+ .secondniddle::before {
+      border-top: 8px solid transparent;
+ }
+
+ .hourniddle::before {
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 12px solid black;
+ }
+
+ @media screen and (max-width:576px) {
+      .clockimage img {
+           width: 300px;
+           height: 300px;
+           width: 80%;
+           height: 80%;
+           height: auto;
+      }
+
+      .secondniddle {
+           width: 100px;
+      }
+
+      .minuteniddle {
+           width: 80px;
+      }
+
+      .hourniddle {
+           width: 60px;
+      }
+ }
+ @media screen and (max-width:450px) {
+    
+     .secondniddle {
+          width: 75px;
+     }
+
+     .minuteniddle {
+          width: 55px;
+     }
+
+     .hourniddle {
+          width: 40px;
+     }
+}
+@media screen and (max-width:320px) {
+     .secondniddle {
+          width: 50px;
+     }
+     .minuteniddle {
+          width: 40px;
+     }
+     .hourniddle {
+          width: 30px;
+     }
+}
